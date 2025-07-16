@@ -124,7 +124,7 @@ h2 {
 .course-listing .card {
   max-width: none;
   background-color: #ffffff;
-  margin: 0;
+  margin: 0 0 10px 0;
   padding: 1.2rem 1.2rem 0;
   
 }
@@ -375,13 +375,45 @@ main.details-hero {
 }
 .start-here .course-count, 
 .start-here .course-duration,
-.testimonials h2{
+.testimonials h2,
+.faq h2{
  color: #ffffff;
+}
+.testimonials h2, .faq h2{
+  text-align: center;
+}
+.faq-list {
+  list-style-type: none;
+  padding-inline-start: 0;
+  width: 60%;
+  margin: 0 auto;
+}
+.faq-list li {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 2em 1.5em;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+.faq-list li.active {
+  background-color: rgba(255, 255, 255, 1);
+  
+}
+.faq-list li.active p,
+.faq-list li.active h3 {
+  color: var(--default-color);
+}
+.faq-list p {
+  margin: 0;
+}
+.faq-list h3 {
+  margin: 0 0 8px 0;
 }
 /* Sections */
 .start-here,
 .certifications,
 .testimonials,
+.faq,
 .why-choose,
 .newsletter,
 .heading-strip,
@@ -426,14 +458,16 @@ main .why-choose {
   background-color: var(--light-blue-bg);
 
 }
-main .testimonials {
+main .testimonials,
+main .faq {
   background:#2563eb;
   
   width: 100%;
   max-width: none;
   color: #ffffff;
 }
-main .testimonials::before {
+main .testimonials::before,
+main .faq::before {
   display: block;
   height: 30px;
   width: 100%;
@@ -535,13 +569,12 @@ ul.course-listing {
   margin-bottom: 5px;
 }
 
-ul.accordion-body {
+.accordion-body {
   height: 0;
   overflow: hidden;
   transition: height 0.8s ease;
   list-style-type: none;
   padding-inline-start: 0;
-  padding-bottom: 10px;
 }
 /* Responsive */
 @media (max-width: 768px) {
