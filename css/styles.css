@@ -262,9 +262,10 @@ main.details-hero {
   flex-direction: column;
   align-items: center;
   background-image: url('../assets/rickyBadge.svg'), url('../assets/sasilioBadge.svg'), url('../assets/bionBadge.svg');
-  background-position: 80% 1%, 14% 84%, 84% 85%;
+  background-position: 80% 20%, 14% 84%, 90% 85%;
   background-size: 62px, 60px, 62px;
   background-repeat: no-repeat;
+  width: 90%;
 }
 .hero h1 {
   font-size: 2.7rem;
