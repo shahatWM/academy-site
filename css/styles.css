@@ -14,6 +14,7 @@
   --page-width: 90%;
   --page-max-width: 1200px;
   --pill-border: #64748b;
+  --blue-bg-grey-text: rgba(244, 244, 245, 0.5);
 }
 @font-face {
   font-family: 'Inter';
@@ -140,13 +141,6 @@ h2 {
   margin-top: 0;
   list-style-type: none;
 }
-.course-listing.collapsed {
-  background-color: transparent;
-
-}
-.course-listing.collapsed .features {
-  display: none;
-}
 .details-item-heading {
   display: flex;
   justify-content: space-between;
@@ -165,9 +159,10 @@ h2 {
   font-weight: 400;
 }
 .btn-primary {
-  background-color: #000;
+  background-color: var(--primary-color);
   color: #fff;
   margin-right: 1rem;
+  border: 0;
 }
 .btn-primary:hover {
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.5);
@@ -429,6 +424,16 @@ main.details-hero {
   width: var(--page-width);
   max-width: var(--page-max-width);
 }
+.newsletter {
+  width: 100%;
+  background-color: #111827;
+  color: #ffffff;
+  max-width: none;
+  padding: 2em 0 3em;
+}
+.newsletter h2 {
+  color: inherit;
+}
 .newsletter p {
   text-align: center;
 }
@@ -456,20 +461,70 @@ main.details-hero {
 .card img,
 .testimonial img {
   display: block;
-  margin: 1rem auto;
+  /* margin: 1rem auto; */
   max-width: 100px;
 }
 main .why-choose {
   width: 100%;
   max-width: none;
   background-color: var(--light-blue-bg);
-
+}
+.why-choose > p {
+  text-align: center;
+  margin: 0 auto;
+  width: 35%;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3rem;
+  margin: 2rem auto 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+  width: 85%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  font-size: 0.85em;
+}
+.features li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.features li h3 {
+  margin: 0.8em 0 0;
 }
 .testimonials {
   background-image: url('../assets/graphic-kite.svg'), url('../assets/graphiti.svg');
-  background-position: 10% 70%, 90% 70%;
+  background-position: 10% 70%, 90% 40%;
   background-repeat: no-repeat;
   background-size: 150px, 110px;
+}
+.testimonial h3 {
+  color: #ffffff;
+  margin: 0 0 1em;
+}
+.testimonial p {
+  color: var(--blue-bg-grey-text);
+  font-style: italic;
+  margin: 0;
+}
+.testimonial-profile {
+  display: flex;
+  align-items: anchor-center;
+  padding-top: 2em;
+}
+.testimonial-profile img {
+  border-radius: 60%;
+  margin-right: 15px;
+}
+.testimonial-profile h4 {
+  margin: 0 0 5px;
+  font-weight: 600;
+}
+.profile-designation {
+  color: #E4E4E7;
 }
 main .testimonials,
 main .faq {
@@ -493,17 +548,14 @@ main .faq::before {
   margin-top: -46px;
 
 }
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
+
 .testimonial-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  padding-inline-start: 0;
+  list-style-type: none;
 }
 .testimonial {
   padding: 2rem;
@@ -511,14 +563,14 @@ main .faq::before {
   max-width: 400px;
   text-align: left;
 }
-form {
+.overview-register form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
 }
-form input[type="email"], input[type="text"] {
+.overview-register form input[type="email"], input[type="text"] {
   padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -527,27 +579,52 @@ form input[type="email"], input[type="text"] {
 
 /* Footer */
 footer {
-  background: #1a1a1a;
-  color: #fff;
   padding: 3rem 1rem;
 }
 .footer-columns {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  gap: 3rem;
   text-align: left;
+  padding-inline-start: 0;
+  list-style-type: none;
+  width: 90%;
+  margin: 0 auto;
+}
+.footer-columns p {
+  font-size: .8em;
 }
 footer h4 {
   margin-bottom: 1rem;
+  font-size: .9em;
 }
-footer input {
-  margin-top: 0.5rem;
+.footer-input {
+  border: 1px solid #D4D4D8;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+footer input[type='text'] {
+  margin: 0;
   padding: 0.5rem;
-  width: 100%;
+  width: 70%;
+  border: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-weight: 200;
+  font-family: inherit;
+  font-size: 0.95em;
 }
-footer button {
-  margin-top: 0.5rem;
-  width: 100%;
+footer input[type='text']:focus {
+  border: 0;
+  outline: none;
+}
+footer button.btn-primary {
+    margin: -1px;
+    border: 0;
+    padding: 12px 10px;
+    border-radius: 0px 10px 10px 0;
+    width: 28%;
 }
 footer p {
   font-size: 0.9rem;
