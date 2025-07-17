@@ -4,6 +4,7 @@
 }
 :root {
   --primary-color: #2563eb;
+  --secondary-color: #E2E8F0;
   --default-color: #4B5563;
   --subtle-color: #858396;
   --heading-color: #111625;
@@ -66,7 +67,7 @@ h1 {
 h2 {
   font-weight: 700;
   font-style: Bold;
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   line-height: 100%;
   letter-spacing: 0.04rem;
   text-align: center;
@@ -157,10 +158,11 @@ h2 {
 }
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
+  padding: 0.45rem 1.2rem;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 0.9em;
+  font-weight: 400;
 }
 .btn-primary {
   background-color: #000;
@@ -314,6 +316,7 @@ main.details-hero {
   background-repeat: no-repeat;
   background-position: 3% 87%;
   background-image: url('../assets/graphiti.svg');
+
 }
 .certifications h2 {
   text-align: center;
@@ -392,7 +395,7 @@ main.details-hero {
 .faq-list li {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.06);
-  padding: 2em 1.5em;
+  padding: 1.4em 1.5em .8em;
   border-radius: 10px;
   margin-bottom: 8px;
 }
@@ -425,6 +428,9 @@ main.details-hero {
   padding: 2rem 1rem;
   width: var(--page-width);
   max-width: var(--page-max-width);
+}
+.newsletter p {
+  text-align: center;
 }
 
 .start-here {
@@ -459,9 +465,15 @@ main .why-choose {
   background-color: var(--light-blue-bg);
 
 }
+.testimonials {
+  background-image: url('../assets/graphic-kite.svg'), url('../assets/graphiti.svg');
+  background-position: 10% 70%, 90% 70%;
+  background-repeat: no-repeat;
+  background-size: 150px, 110px;
+}
 main .testimonials,
 main .faq {
-  background:#2563eb;
+  background-color:#2563eb;
   
   width: 100%;
   max-width: none;
