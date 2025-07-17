@@ -6,7 +6,8 @@
   --primary-color: #2563eb;
   --secondary-color: #E2E8F0;
   --default-color: #4B5563;
-  --subtle-color: #858396;
+  --grey-text: #858396;
+  --subtle-color: #E4E4E7;
   --heading-color: #111625;
   --heading-one-size: 2.7rem;
   --heading-two-size: 1.3rem;
@@ -38,6 +39,24 @@ body {
   margin: 0;
   color: var(--default-color);
 }
+/* form elements */
+input[type='email'],
+input[type='text'] {
+  border: 1px solid var(--pill-border);
+  padding: 0.9em 0.5em 0.8em;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 5px;
+}
+input[placeholder] {
+  color: #aaaaaa;
+}
+input[type='email']:focus,
+input[type='text']:focus {
+  outline: none;
+}
+/*Form Elelments end  */
 h1.brand-logo {
   font-size: 1em;
   margin: 0;
@@ -134,7 +153,7 @@ h2 {
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
-.course-listing .features {
+.course-listing .course-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
@@ -244,6 +263,7 @@ main.landing, main.details-hero  {
   background-position: 0 -8%, 100% -13%;
   background-repeat: no-repeat;
 }
+
 .heading-strip p {
   width: 50%;
 }
@@ -354,7 +374,7 @@ main.details-hero {
   background-image: url('../assets/iconlayers.svg');
   background-repeat: no-repeat;
   background-position: 0 0;
-  color: var(--subtle-color);
+  color: var(--grey-text);
   padding-left: 20px;
   margin-right: 10px;
 } 
@@ -377,6 +397,7 @@ main.details-hero {
 .testimonials h2,
 .faq h2{
  color: #ffffff;
+ margin-top: 1.2rem;
 }
 .testimonials h2, .faq h2{
   text-align: center;
@@ -424,12 +445,19 @@ main.details-hero {
   width: var(--page-width);
   max-width: var(--page-max-width);
 }
+.heading-strip {
+  padding-bottom: 0;
+}
 .newsletter {
   width: 100%;
   background-color: #111827;
   color: #ffffff;
   max-width: none;
   padding: 2em 0 3em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 .newsletter h2 {
   color: inherit;
@@ -437,7 +465,13 @@ main.details-hero {
 .newsletter p {
   text-align: center;
 }
-
+.newsletter input {
+  width: 300px;
+}
+.newsletter .btn-primary {
+  padding: 1.1em 1em 1.1em;
+  margin-left: 9px;
+}
 .start-here {
   padding: 2rem 3rem;
 }
@@ -579,7 +613,7 @@ main .faq::before {
 
 /* Footer */
 footer {
-  padding: 3rem 1rem;
+  padding: 3rem 0 .5em;
 }
 .footer-columns {
   display: grid;
@@ -604,7 +638,7 @@ footer h4 {
   display: flex;
   justify-content: space-between;
 }
-footer input[type='text'] {
+footer input[type='text'], footer input[type='email'] {
   margin: 0;
   padding: 0.5rem;
   width: 70%;
@@ -615,7 +649,7 @@ footer input[type='text'] {
   font-family: inherit;
   font-size: 0.95em;
 }
-footer input[type='text']:focus {
+footer input[type='text']:focus, footer input[type='email']:focus {
   border: 0;
   outline: none;
 }
@@ -633,6 +667,58 @@ footer p {
 footer .copyright {
   text-align: center;
   margin-top: 2rem;
+}
+.contact-us {
+  display: flex;
+  padding-top: 2em;
+  align-items: center;
+}
+.contact-us label {
+  color: var(--grey-text);
+  font-size: 0.8em;
+}
+.contact-us span {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+.call-details, .email-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.call-details {
+  margin-right: 15px;
+}
+.copyright {
+  border-top: 1px solid var(--subtle-color);
+  font-size: 0.85em;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 1.5em;
+  align-items: center;
+}
+.icon-social {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 1.5em;
+} 
+.icon-twitter {
+  background-image: url(../assets/icon-twitter.svg);
+}
+.icon-fb {
+  background-image: url(../assets/icon-fb.svg);
+}
+.icon-ig {
+  background-image: url(../assets/icon-ig.svg);
+}
+.icon-github {
+  background-image: url(../assets/icon-github.svg);
 }
 
 /* Section background */
